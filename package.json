@@ -1,0 +1,16 @@
+{
+  "name": "date-by-country",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/sannanansari/dateByCountry"
+  },
+  "peerDependencies": {
+    "@angular/common": "^15.1.0",
+    "@angular/core": "^15.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
