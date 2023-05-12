@@ -34,20 +34,25 @@ month
     "narrow" (e.g., M). Two months may have the same narrow style for some locales (e.g. May's narrow style is also M).
 
 day
+
     The representation of the day. Possible values are:
     "numeric" (e.g., 1)
     "2-digit" (e.g., 01)
 
 hour
+
     The representation of the hour. Possible values are "numeric", "2-digit".
 
 minute
+
     The representation of the minute. Possible values are "numeric", "2-digit".
 
 second
+
     The representation of the second. Possible values are "numeric","2-digit".
 
 If you have to pass this to dateByCountry then just options first alphabet with value first alphabet
+
 eg:- `eg:- {{date | dateByCountry: 'en-UK' : 'yn-mn-dn-wl-hn-Mn-sn' }}`
 
 Example 
