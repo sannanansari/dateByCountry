@@ -12,15 +12,23 @@ export class DateByCountryPipe implements PipeTransform {
   transform(value: any, ...args: string[]): unknown {
     var date = new Date(new Date(value).toUTCString())
     let options: argFormat = {};
-    if(args[1]){
-    var arg2 = args[1].split('-');
-    for (let i = 0; i < arg2.length; i++) {
-      var temp1 = first(arg2[i][0]);
-      var temp2 = second(arg2[i][1])
-      options[temp1] = temp2
+    if(args[1]) {
+      var arg2 = args[1].split('-');
+      for (let i = 0; i < arg2.length; i++) {
+        var temp1 = first(arg2[i][0]);
+        var temp2 = second(arg2[i][1])
+        options[temp1] = temp2
+      }
     }
-
+                                    
+    if(args[2]) {
+      args2 = args[2].split("-");
+      if(args2[1] == "true")
+      options['hour12'] = true ;
+      else
+      options['hour12'] =false ;
     }
+                                    
     return new Intl.DateTimeFormat(args[0], options).format(date);
   }
 }
