@@ -64,6 +64,12 @@ Example
     hn - hours with numeric
     Mn - Minutes with numeric
     sn - second with numeric
+    
+Hours Format
+
+    {{date | dateByCountry: 'en-UK' : 'yn-mn-dn-wl-hn-Mn-sn' : 'H-true' }}
+    true :  12 hours format 
+    false: 24 hours format
 
 Reference:
     [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#specifications)
