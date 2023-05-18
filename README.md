@@ -71,6 +71,11 @@ Hours Format
     true :  12 hours format 
     false: 24 hours format
 
+TimeZone
+
+    {{date | dateByCountry: 'en-UK' : 'yn-mn-dn-wl-hn-Mn-sn' : 'H-true' : 'T-America/Los_Angeles' }}
+[Time Zones](https://timezonedb.com/time-zones)
+
 Reference:
     [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#specifications)
     
