@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 interface argFormat {
-  [key: string]: string;
+  [key: string]: string | boolean;
 }
 
 @Pipe({
@@ -12,15 +12,20 @@ export class DateByCountryPipe implements PipeTransform {
   transform(value: any, ...args: string[]): unknown {
     var date = new Date(new Date(value).toUTCString())
     let options: argFormat = {};
-    if(args[1]) {
-      var arg2 = args[1].split('-');
-      for (let i = 0; i < arg2.length; i++) {
-        var temp1 = first(arg2[i][0]);
-        var temp2 = second(arg2[i][1])
-        options[temp1] = temp2
-      }
+    let timeZone!: {};
+    var t = "true"
+    var f = "false";
+    var args2;
+    var args3;
+    if(args[1]){
+    var arg2 = args[1].split('-');
+    for (let i = 0; i < arg2.length; i++) {
+      var temp1 = first(arg2[i][0]);
+      var temp2 = second(arg2[i][1])
+      options[temp1] = temp2
     }
-                                    
+
+    }
     if(args[2]) {
       args2 = args[2].split("-");
       if(args2[1] == "true")
@@ -28,7 +33,13 @@ export class DateByCountryPipe implements PipeTransform {
       else
       options['hour12'] =false ;
     }
-                                    
+    if(args[3]) {
+      args3 = args[3].split("-");
+      options['timeZone'] = args3[1]
+      options['timeZoneName'] = "long"
+    }
+    console.log("Options ==> ",options,args);
+    
     return new Intl.DateTimeFormat(args[0], options).format(date);
   }
 }
